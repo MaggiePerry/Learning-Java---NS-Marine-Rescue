@@ -66,8 +66,10 @@ mvn test
 
 ## Learning Objectives
 
-This project is structured across 25 gihub issues to teach:
+This project is structured across 25 github issues to teach:
 
+| Concept    | Learning |
+| -------- | ------- |
 | Project Setup | Maven, packages, Java project structure |
 | Domain Models | Classes, encapsulation, enums, composition, collections |
 | Repository Layer | Interfaces, generics, HashMap, Stream API |
@@ -79,6 +81,8 @@ This project is structured across 25 gihub issues to teach:
 
 ## Branch Strategy
 
+| Branch | Scope |
+| -------- | ------- |
 | `feature/project-setup` | Initial project scaffolding |
 | `feature/animal-model` | All domain models |
 | `feature/repository-layer` | Interfaces and in-memory implementations |
