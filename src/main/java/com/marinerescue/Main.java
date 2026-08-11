@@ -17,7 +17,7 @@ public class Main {
         System.out.println(case_one);
 
         // Assigning
-        case_one.advanceStatus();
+        case_one.assignVolunteer(new Volunteer("Maggie", "902-880-1234", true));
         System.out.println(case_one);
 
         // In rescue
@@ -41,6 +41,20 @@ public class Main {
                 new Observation("Baby is released!", "Maggie"));
 
         System.out.println(case_one);
+
+        // Case two animal testing without adding volunteer or observations
+        Animal fuzzy = new Animal("Fuzzy", Species.PUFFIN, 1);
+        System.out.println(fuzzy);
+
+        RescueCase case_two = new RescueCase(fuzzy, "Cape Breton");
+        case_two.advanceStatus();
+        System.out.println(case_two);
+        case_two.advanceStatus();
+        System.out.println(case_two);
+        case_two.advanceStatus();
+        System.out.println(case_two);
+        case_two.advanceStatus();
+        System.out.println(case_two);
 
         // Try to set age to invalid value
         // baby.setAge(-1);
