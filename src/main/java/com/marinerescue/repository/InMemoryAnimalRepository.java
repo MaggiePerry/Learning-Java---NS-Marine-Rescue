@@ -5,8 +5,6 @@ import com.marinerescue.model.Species;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import javax.management.AttributeList;
-
 public class InMemoryAnimalRepository implements AnimalRepository {
     private final Map<UUID, Animal> storage = new HashMap<>();
 
@@ -28,7 +26,7 @@ public class InMemoryAnimalRepository implements AnimalRepository {
     }
 
     @Override
-    public List<Animal> findByAll() {
+    public List<Animal> findAll() {
         return new ArrayList<>(storage.values());
     }
 

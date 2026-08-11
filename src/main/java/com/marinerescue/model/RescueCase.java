@@ -24,6 +24,15 @@ public class RescueCase {
         this.location = location;
     }
 
+    // Getters
+    public UUID getID() {
+        return id;
+    }
+
+    public CaseStatus getStatus() {
+        return status;
+    }
+
     // Advances the rescue status of a resuce case
     public void advanceStatus() {
         // If the case is closed (animal is released or deceased) throw error

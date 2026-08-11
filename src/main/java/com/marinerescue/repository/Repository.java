@@ -9,7 +9,7 @@ public interface Repository<T> {
 
     Optional<T> findById(UUID id);
 
-    List<T> findByAll();
+    List<T> findAll();
 
     void delete(UUID id);
 

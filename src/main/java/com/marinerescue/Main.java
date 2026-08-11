@@ -4,37 +4,56 @@ import java.util.UUID;
 
 import com.marinerescue.model.*;
 import com.marinerescue.repository.InMemoryAnimalRepository;
+import com.marinerescue.repository.InMemoryRescueCaseRepository;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Marine Rescue System Starting...");
 
-        // Define Animal Repo
-        InMemoryAnimalRepository repo = new InMemoryAnimalRepository();
+        // Define Repos
+        InMemoryAnimalRepository a_repo = new InMemoryAnimalRepository();
+        InMemoryRescueCaseRepository rc_repo = new InMemoryRescueCaseRepository();
 
         // Enter new animal
         Animal baby = new Animal("Baby", Species.HARBOUR_SEAL, 2);
         System.out.println(baby);
 
         // Save to mem
-        repo.save(baby);
+        a_repo.save(baby);
 
         // Find by ID
-        System.out.println(repo.findById(baby.getID()));
+        System.out.println(a_repo.findById(baby.getID()));
         // Random ID test
-        System.out.println(repo.findById(UUID.randomUUID()));
+        System.out.println(a_repo.findById(UUID.randomUUID()));
 
         // Find by species
-        System.out.println(repo.findBySpecies(Species.HARBOUR_SEAL));
+        System.out.println(a_repo.findBySpecies(Species.HARBOUR_SEAL));
 
         // Find by all
-        System.out.println(repo.findByAll());
+        System.out.println(a_repo.findAll());
 
         // Delete
-        repo.delete(baby.getID());
-        System.out.println(repo.findByAll()); // should be empty
+        a_repo.delete(baby.getID());
+        System.out.println(a_repo.findAll()); // should be empty
 
-        // RescueCase case_one = new RescueCase(baby, "Halifax");
+        RescueCase case_one = new RescueCase(baby, "Halifax");
+        // Save to rescue case mem
+        rc_repo.save(case_one);
+
+        // Find by ID
+        System.out.println(rc_repo.findById(case_one.getID()));
+        // Random ID test
+        System.out.println(rc_repo.findById(UUID.randomUUID()));
+
+        // Find by species
+        System.out.println(rc_repo.findByStatus(CaseStatus.REPORTED));
+
+        // Find by all
+        System.out.println(rc_repo.findAll());
+
+        // Delete
+        rc_repo.delete(case_one.getID());
+        System.out.println(rc_repo.findAll()); // should be empty
 
         // case_one.addObservation(new Observation("Poor baby got injured by a boat
         // propeller", "Maggie"));
