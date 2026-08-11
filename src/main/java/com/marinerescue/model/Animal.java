@@ -58,7 +58,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return (name + " (" + species + "),  Healthstatus = " + healthstatus + "");
+        return (name + " (" + species + "),  Healthstatus : " + healthstatus + "");
     }
 
 }
